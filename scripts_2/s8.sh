@@ -17,14 +17,16 @@ while true; do
 
     # Preguntar si se desea continuar o salir
     read -p "¿Deseas buscar otro usuario? (s/n): " respuesta
-
-    if [ $respuesta == "n" ]; then
-	echo "Saliendo del programa"
-	break
-	exit 1
-    elif [ $respuesta == "s" ]; then
-	echo "Busca otro usuario"
-    else
-	echo "Debes introducir s o n"
-    fi
+    case "$respuesta" in
+        [Nn]) 
+            echo "Saliendo del programa"
+            break
+            ;;
+        [Ss])
+            echo "Busca otro usuario"
+            ;;
+        *)
+            echo "Debes introducir 's' o 'n'."
+            ;;
+    esac
 done
